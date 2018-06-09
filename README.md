@@ -13,5 +13,6 @@ Spring Boot REST Boilerplate Project
        http://localhost:8080/base
        You should see the json like below:
 ```json
-{"one": "two", "three": "four", "five": "six", "seven": "eight"}
+{
+    "one": "two", "three": "four", "five": "six", "seven": "eight"}
 ```
