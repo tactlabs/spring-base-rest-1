@@ -11,7 +11,7 @@ Spring Boot REST Boilerplate Project
 5. You should see the logs in the console.
 6. Test base basic REST api in the browser: 
        http://localhost:8080/base
-       --
+--
        You should see the json like below:
 ```json
 {
