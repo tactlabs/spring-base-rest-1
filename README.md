@@ -1,7 +1,7 @@
 # spring-base-rest
 Spring Boot REST Boilerplate Project
 
-How to run in Eclipse or Spring Tool Suite (STS)?
+> How to run in Eclipse or Spring Tool Suite (STS)?
 1. Just download or clone in your local spce. 
 2. In Eclipse IDE, import "Existing Maven Projects" and select the location in "Root Directory"
 3. Just click finish
