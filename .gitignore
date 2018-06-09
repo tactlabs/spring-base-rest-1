@@ -1,0 +1,15 @@
+/target/
+*/target/*
+*/target/**
+
+*.externalToolBuilders/*
+
+
+/*.class
+.project
+.classpath
+.settings/*
+
+/log/
+*/logs/*
+*/logs/**
