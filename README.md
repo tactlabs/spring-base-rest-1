@@ -14,5 +14,9 @@ Spring Boot REST Boilerplate Project
        You should see the json like below:
 ```json
 {
-    "one": "two", "three": "four", "five": "six", "seven": "eight"}
+    "one": "two", 
+    "three": "four", 
+    "five": "six", 
+    "seven": "eight"
+}
 ```
