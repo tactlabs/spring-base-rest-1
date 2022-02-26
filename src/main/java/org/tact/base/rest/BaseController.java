@@ -94,8 +94,39 @@ public class BaseController {
         return (T) map;
     }
     
+    /**
+     * 
+     * @param <T>
+     * @param name
+     * @return
+     * 
+     * Possible URLs:
+	 * 		http://0.0.0.0:7826/reverse/optional
+     * 
+     */
+    @SuppressWarnings("unchecked")
+	@RequestMapping(value = "reverse/optional", method = RequestMethod.GET)
+    public <T> T reverseNameOptional(
+    	@RequestParam(defaultValue = "python") String name
+    ) {
+    	
+    	Map<String, Object> map = new LinkedHashMap<String, Object>();
+    	map.put("name", name);
+    	
+    	// reverse
+    	String reveseName = new StringBuilder(name).reverse().toString();
+    	map.put("reverse_name", reveseName);
+    	
+    	// make first letter capital
+    	String cap = reveseName.substring(0, 1).toUpperCase() + reveseName.substring(1);
+    	map.put("reverse_name_with_cap", cap);
+    	
+        return (T) map;
+    }
     
-    @RequestMapping(value = "city/{prov}", method = RequestMethod.GET)
+    
+    @SuppressWarnings("unchecked")
+	@RequestMapping(value = "city/{prov}", method = RequestMethod.GET)
     public <T> T listProvCities(@PathVariable("prov") String prov) {
     	
     	Map<String, Object> map = new LinkedHashMap<String, Object>();
@@ -119,6 +150,23 @@ public class BaseController {
         return (T) map;
     }
     
+    @SuppressWarnings("unchecked")
+	@RequestMapping(value = "/all/params", method = RequestMethod.GET)
+    public <T> T getAllParams(
+    	@RequestParam Map<String,String> allParams
+    ) {
+        Map<String, Object> allParamMap = new LinkedHashMap<String, Object>();
+        allParamMap.put("given_params", allParams);  
+        
+        print(allParams.getClass().getName());
+        print(allParams.entrySet().getClass().getName());
+        
+        return (T) allParamMap;
+    }
+    
+    private static void print(Object content) {
+    	System.out.println(content);
+    }
 
     @RequestMapping(value = "x/", method = RequestMethod.GET)
     public <T> T listProvCitiesReq(@RequestParam Map<String, String> req) {
